@@ -1,1 +1,1 @@
-web: gunicorn main:server --preload
+web: gunicorn main:server --preload --max-requests 1200
