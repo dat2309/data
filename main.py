@@ -25,7 +25,6 @@ app.layout = html.Div([
  # home page
 main = html.Div([
     html.Div([
-      html.Img(src="./scatter/thangdo.jpg"),
       html.Div('HOME PAGE', style={'font-size': '60px','text-align': 'center','font-weight': 'bold','color':'white'}),
       # another page
       html.Div([
@@ -47,6 +46,7 @@ main = html.Div([
       html.Div([
         html.Div([
             html.Div('About my team:', style={'font-size': '25px','font-weight': 'bold',}),
+          html.Img(src="./scatter/thangdo.jpg"),
             html.Div([
                 html.Div([
                   html.Div('Nguyễn Thế Đạt - 18036401'),
