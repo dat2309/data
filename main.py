@@ -46,7 +46,7 @@ main = html.Div([
       html.Div([
         html.Div([
             html.Div('About my team:', style={'font-size': '25px','font-weight': 'bold',}),
-          html.Img(src="./scatter/thangdo.jpg"),
+          html.Img(src='.\scatter\thangdo.jpg'),
             html.Div([
                 html.Div([
                   html.Div('Nguyễn Thế Đạt - 18036401'),
