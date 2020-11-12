@@ -1,4 +1,4 @@
-pip install -g firebase-tools
+
 import dash_bootstrap_components as dbc
 import dash
 import dash_core_components as dcc
