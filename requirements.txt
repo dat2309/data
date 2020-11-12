@@ -33,3 +33,4 @@ Werkzeug==0.14.
 firebase_admin==4.3.0
 google-api-python-client==1.12.3
 google-api-core==1.13.0
+grpcio== 1.2.0
