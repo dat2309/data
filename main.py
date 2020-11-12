@@ -194,7 +194,7 @@ lineChart = html.Div([
                 ,style={'margin-left': '30px'})
             ]),
             html.Div('Ý nghĩa chỉ số AQI'),
-            html.Img(src=Image.open('./scatter/thangdo.jpg'), className= 'col-8',style={'align':'center'}),
+         
             html.Div('*Nhấn chọn bang trên chú thích bên phải biểu đồ để ẩn/hiện line', style={'font-size':'13px', 'color':'red'}), 
             html.Div([
                 html.Div(
@@ -512,18 +512,6 @@ scatterChart = html.Div([
                   html.Br(),html.Br()
             ]),
                 html.Div('Biểu đồ scatter thể hiện sự tương quan giữa các loại khí',style={'font-size':'20px','text-align':'center'}),
-                html.Div([
-                   html.Img(src=Image.open('./scatter/scatter.jpg'), className='col -5'),
-                   html.Img(src=Image.open('./scatter/scatter2.jpg'), className='col -5'),       
-                ],className='row'),
-                 html.Div([
-                      html.Img(src=Image.open('./scatter/scatter3.jpg'), className='col -5'),
-                     html.Img(src=Image.open('./scatter/scatter4.jpg'), className='col -5'),     
-                 ],className ='row'),
-                   html.Div([
-                             html.Img(src=Image.open('./scatter/scatter5.jpg'), className='col -5'),  
-                                html.Img(src=Image.open('./scatter/scatter1.jpg'), className='col -5'),
-                   ],className ='row')
         ],className='col-9 bg-light',style={'border-radius': '3px','padding': '20px 40px'}),
     ], className = 'row')
 ], className='container')
