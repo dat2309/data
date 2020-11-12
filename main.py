@@ -241,7 +241,8 @@ lineChart = html.Div([
 
             ], className='row bg-success'),
         ],className='col-9 bg-light',style={'border-radius': '3px','padding': '20px 40px'}),
-], className='container'),])
+  ], className = 'row')
+], className='container')
 # # Bar Chart 
 barChart = html.Div([
      # home page text
