@@ -248,11 +248,9 @@ lineChart = html.Div([
                     dcc.Graph(figure=figmean),
                 ),
                 html.Br(),
-              
+
             ], className='row bg-success'),
-    
         ],className='col-9 bg-light',style={'border-radius': '3px','padding': '20px 40px'}),
-    ], className = 'row')
 ], className='container')
 
 
