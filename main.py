@@ -128,7 +128,7 @@ y = [list() for x in range(47)]
 yNO2 = [list() for x in range(47)]
 yO3 = [list() for x in range(47)]
 ySO2 = [list() for x in range(47)]
-for i in range(16):
+for i in range(17):
   for j in range(47):
     y[j].append(c[i][state_list[j]])
     yNO2[j].append(cNO2[i][state_list[j]])  
