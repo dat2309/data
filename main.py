@@ -10,7 +10,6 @@ from dash.dependencies import Input, Output
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore, initialize_app
-from PIL import Image
 
 cred = credentials.Certificate("./data-analytics-1-a1fc9-firebase-adminsdk-7pw8e-d090a8ace0.json") #key connect database
 firebase_admin.initialize_app(cred)
@@ -51,6 +50,7 @@ main = html.Div([
                   html.Div('Ngô Quang Long 18039011'),
                   html.Div('Lê Dĩ Khang - 18037851'),  
                   ],className='col-6'),
+              html.Div(html.Img(src=app.get_asset_url('./scatter/thangdo.jpg'))),
                 html.Div( [
                   html.Div('Nguyễn Trần Nhật Hưng - 18036971'),
                   html.Div('Bùi Thành Nam - 18055471'),
