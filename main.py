@@ -1,4 +1,3 @@
-
 import dash_bootstrap_components as dbc
 import dash
 from google.cloud import firestore
@@ -46,7 +45,6 @@ main = html.Div([
       html.Div([
         html.Div([
             html.Div('About my team:', style={'font-size': '25px','font-weight': 'bold',}),
-          html.Img(src='.\scatter\thangdo.jpg'),
             html.Div([
                 html.Div([
                   html.Div('Nguyễn Thế Đạt - 18036401'),
@@ -90,7 +88,6 @@ matplotlib = html.Div([
                 html.Span('Dash là một framework mã nguồn mở dành cho xây dựng ứng dụng phân tích dữ liệu mà không cần đến Ngôn ngữ JavaScript, và nó được tích hợp với thi viện Plotly - một thư viện đồ họa. '
                 ,style={'margin-left': '30px'})
             ])
-           
         ],className='col-9 bg-light',style={'border-radius': '3px','padding': '20px 40px'}),
     ], className = 'row')
 ], className='container')
@@ -188,8 +185,7 @@ lineChart = html.Div([
                 html.Div('Line Chart',style={'text-align':'center','font-size':'40px','font-weight': 'bold'}),
                 dcc.Link('Home Page', href="/",style={'font-size':'25px','display': 'flex','justify-content': 'space-evenly'}),
             ]),
-            html.Div([
-                
+            html.Div([               
                 html.Span('-Line là dạng biểu đồ để thể hiện tiến trình thay đổi, động thái gia tăng của một đối tượng hay một nhóm đối tượng nào đó qua thời gian.'
                 ,style={'margin-left': '30px'})
             ]),
@@ -199,10 +195,8 @@ lineChart = html.Div([
             ]),
             html.Div('Ý nghĩa chỉ số AQI'),
             html.Img(src=Image.open('./scatter/thangdo.jpg'), className= 'col-8',style={'align':'center'}),
-            html.Div('*Nhấn chọn bang trên chú thích bên phải biểu đồ để ẩn/hiện line', style={'font-size':'13px', 'color':'red'}),
-            
+            html.Div('*Nhấn chọn bang trên chú thích bên phải biểu đồ để ẩn/hiện line', style={'font-size':'13px', 'color':'red'}), 
             html.Div([
-              
                 html.Div(
                 dcc.Graph(figure=figCO), 
                 )
@@ -233,17 +227,15 @@ lineChart = html.Div([
            html.Div([
                   html.Br(),html.Br()
             ]),
-            
             html.Div([              
                 html.Div(
                     dcc.Graph(figure=figmean),
                 ),
                 html.Br(),
-
             ], className='row bg-success'),
         ],className='col-9 bg-light',style={'border-radius': '3px','padding': '20px 40px'}),
   ], className = 'row')
-], className='container')
+])
 # # Bar Chart 
 barChart = html.Div([
      # home page text
@@ -271,16 +263,10 @@ barChart = html.Div([
                 html.Span('Bar chart (biểu đồ cột): thường được dùng khi cần phân loại dữ liệu và so sánh độ tương quản giữa chúng. Sử dụng để so sáng AQI của từng loại khí và sự tương quan giữa các bang. '
                 ,style={'margin-left': '30px'})
             ]),
-          
             html.Div('Ý nghĩa chỉ số AQI '),
-            html.Img(src=Image.open('./scatter/thangdo.jpg'), className= 'col-8',style={'align':'center'}),
-            html.Div([
-                  html.Br(),html.Br()
-            ]),
             html.Div('Chọn năm'),
             html.Div([
               html.Div([
-
     dcc.Dropdown(id='dropdown', options=[
             {'label': '2000', 'value': '2000'},
             {'label': '2001', 'value': '2001'},
@@ -308,60 +294,42 @@ barChart = html.Div([
         ],className='col-9 bg-light',style={'border-radius': '3px'}),
     ], className = 'row')
 ], className='container')
-
-
 @app.callback(Output('graph-court', 'figure'), 
               [Input('dropdown', 'value')])
 
-def update_graph(selected_value):
-  
+def update_graph(selected_value): 
   if selected_value ==  '2000':
     docs = db.collection(u'barchart_AQI_State_2000').stream()
   elif selected_value== '2001':
     docs = db.collection(u'barchart_AQI_State_2001').stream()
-
   elif selected_value== '2002':
     docs = db.collection(u'barchart_AQI_State_2002').stream()
-
   elif selected_value== '2003':
     docs = db.collection(u'barchart_AQI_State_2003').stream()
-
   elif selected_value== '2004':
-    docs = db.collection(u'barchart_AQI_State_2004').stream()
- 
+    docs = db.collection(u'barchart_AQI_State_2004').stream() 
   elif selected_value== '2005':
-    docs = db.collection(u'barchart_AQI_State_2005').stream()
-  
+    docs = db.collection(u'barchart_AQI_State_2005').stream()  
   elif selected_value== '2006':
-    docs = db.collection(u'barchart_AQI_State_2006').stream()
-   
+    docs = db.collection(u'barchart_AQI_State_2006').stream()   
   elif selected_value== '2007':
-    docs = db.collection(u'barchart_AQI_State_2007').stream()
-    
+    docs = db.collection(u'barchart_AQI_State_2007').stream()   
   elif selected_value== '2008':
     docs = db.collection(u'barchart_AQI_State_2008').stream()
-
   elif selected_value== '2009':
-    docs = db.collection(u'barchart_AQI_State_2009').stream()
-   
+    docs = db.collection(u'barchart_AQI_State_2009').stream()   
   elif selected_value== '2010':
-    docs = db.collection(u'barchart_AQI_State_2010').stream()
-    
+    docs = db.collection(u'barchart_AQI_State_2010').stream()    
   elif selected_value== '2011':
-    docs = db.collection(u'barchart_AQI_State_2011').stream()
-   
+    docs = db.collection(u'barchart_AQI_State_2011').stream() 
   elif selected_value== '2012':
-    docs = db.collection(u'barchart_AQI_State_2012').stream()
- 
+    docs = db.collection(u'barchart_AQI_State_2012').stream() 
   elif selected_value== '2013':
-    docs = db.collection(u'barchart_AQI_State_2013').stream()
-   
+    docs = db.collection(u'barchart_AQI_State_2013').stream()   
   elif selected_value== '2014':
     docs = db.collection(u'barchart_AQI_State_2014').stream()
-  
   elif selected_value== '2015':
     docs = db.collection(u'barchart_AQI_State_2015').stream()
-   
   elif selected_value== '2016':
     docs = db.collection(u'barchart_AQI_State_2016').stream()
   c=[]
@@ -432,12 +400,8 @@ pieChart = html.Div([
                 html.Span('Pie chart (biểu đồ tròn) được sử dụng khi cần biểu diễn dữ liệu dưới dạng %. Sử dụng để thể hiện tỷ lệ % của AQI trung bình ở Mỹ của các loại khí theo từng năm.'
                 ,style={'margin-left': '30px'})
             ]),
-           html.Div([
-                  html.Br(),html.Br(),
-            ]),
             html.Div('Chọn năm'),
             html.Div([
-                
                 html.Div([ dcc.Dropdown(id='dropdown2', options=[
             {'label': '2000', 'value': '2000'},
             {'label': '2001', 'value': '2001'},
@@ -466,7 +430,6 @@ pieChart = html.Div([
 ], className='container')
 @app.callback(Output('graph-court2', 'figure'), 
               [Input('dropdown2', 'value')])
-
 def update_graph2(selected_value):
   docs =db.collection(u'pie_and_line_mean_AQI_2000_2016').stream()
   c=[]
@@ -482,62 +445,45 @@ def update_graph2(selected_value):
     y[i].append(c[i]['mean_AQI_SO2']/sum)
   Air = ['CO', 'NO2', 'O3','SO2']
   fig = go.Figure()
-  fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ '+selected_value)
   if selected_value ==  '2000':
     fig.add_trace(go.Pie(labels=Air, values=y[0], name="Trung bình khínam2000"))
-
   elif selected_value ==  '2001':
     fig.add_trace(go.Pie(labels=Air, values=y[1], name="Trung bình khínam2001"))
-
   elif selected_value ==  '2002':
     fig.add_trace(go.Pie(labels=Air, values=y[2], name="Trung bình khínam2002"))
-
   elif selected_value ==  '2003':
     fig.add_trace(go.Pie(labels=Air, values=y[3], name="Trung bình khínam2003"))
-
   elif selected_value ==  '2004':
     fig.add_trace(go.Pie(labels=Air, values=y[4], name="Trung bình khínam2004"))
-
   elif selected_value ==  '2005':
     fig.add_trace(go.Pie(labels=Air, values=y[5], name="Trung bình khínam2005"))
-
   elif selected_value ==  '2006':
     fig.add_trace(go.Pie(labels=Air, values=y[6], name="Trung bình khínam2006"))
- 
   elif selected_value ==  '2007':
     fig.add_trace(go.Pie(labels=Air, values=y[7], name="Trung bình khínam2007"))
-
   elif selected_value ==  '2008':
     fig.add_trace(go.Pie(labels=Air, values=y[8], name="Trung bình khínam2008"))
-  
   elif selected_value ==  '2009':
     fig.add_trace(go.Pie(labels=Air, values=y[9], name="Trung bình khínam2009"))
-
   elif selected_value ==  '2010':
     fig.add_trace(go.Pie(labels=Air, values=y[10], name="Trung bình khínam2010"))
-
   elif selected_value ==  '2011':
     fig.add_trace(go.Pie(labels=Air, values=y[11], name="Trung bình khínam2011"))
   elif selected_value ==  '2012':
     fig.add_trace(go.Pie(labels=Air, values=y[12], name="Trung bình khínam2012"))
   elif selected_value ==  '2013':
     fig.add_trace(go.Pie(labels=Air, values=y[13], name="Trung bình khínam2013"))
-   
   elif selected_value ==  '2014':
     fig.add_trace(go.Pie(labels=Air, values=y[14], name="Trung bình khínam2014"))
   elif selected_value ==  '2015':
     fig.add_trace(go.Pie(labels=Air, values=y[15], name="Trung bình khínam2015"))
-
   elif selected_value ==  '2016':
     fig.add_trace(go.Pie(labels=Air, values=y[16], name="Trung bình khínam2016"))
-
+  fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ '+selected_value)
   return fig
-
-
 #scatter charts
 scatterChart = html.Div([
      # home page text
-    
     html.Div([
         html.Div([
             html.Ul([
@@ -565,37 +511,22 @@ scatterChart = html.Div([
             html.Div([
                   html.Br(),html.Br()
             ]),
-            
-               
                 html.Div('Biểu đồ scatter thể hiện sự tương quan giữa các loại khí',style={'font-size':'20px','text-align':'center'}),
                 html.Div([
                    html.Img(src=Image.open('./scatter/scatter.jpg'), className='col -5'),
-               
                    html.Img(src=Image.open('./scatter/scatter2.jpg'), className='col -5'),       
                 ],className='row'),
                  html.Div([
                       html.Img(src=Image.open('./scatter/scatter3.jpg'), className='col -5'),
-                     html.Img(src=Image.open('./scatter/scatter4.jpg'), className='col -5'),
-                         
+                     html.Img(src=Image.open('./scatter/scatter4.jpg'), className='col -5'),     
                  ],className ='row'),
-                    
                    html.Div([
                              html.Img(src=Image.open('./scatter/scatter5.jpg'), className='col -5'),  
                                 html.Img(src=Image.open('./scatter/scatter1.jpg'), className='col -5'),
                    ],className ='row')
-             
-             
-
-         
-    
         ],className='col-9 bg-light',style={'border-radius': '3px','padding': '20px 40px'}),
     ], className = 'row')
 ], className='container')
-
-
-
-
-
 ##---------------------------------------------------------
 DataAnalysis = html.Div([
      # home page text
@@ -641,7 +572,6 @@ DataAnalysis = html.Div([
                           html.Div('CO 1st Max Value:	Giá trị CO tối đa đầu tiên'),
                           html.Div('CO 1st Max Hour:	Giá trị tối đa giờ đầu tiên của CO'),
                           html.Div('CO AQI: Giá trị AQI của khí CO'),]
-                      
                           , style={'margin-left': '30px'})  
             ]),
              html.Div([
@@ -670,8 +600,7 @@ DataAnalysis = html.Div([
              html.Div([
                  html.Span('- Mục tiêu nghiên cứu: ',style={'font-weight': 'bold','font-size':'18px'}),
                  html.Div('-	Nghiên cứu về mức độ ô nhiễm môi trường giữa các tiểu bang ',style={'margin-left': '30px'})]
-                 )
-            ,
+                 ),
              html.Div([
                  html.Span('- Phạm vi nghiên cứu:',style={'font-weight': 'bold','font-size':'18px'}),
                  html.Div('-	17 năm (Từ năm 2000 – 2016)',style={'margin-left': '30px'})
@@ -680,9 +609,7 @@ DataAnalysis = html.Div([
                  html.Span('- Nhóm biến tham gia quá trình nghiên cứu:',style={'font-weight': 'bold','font-size':'18px'}),
                  html.Div('-	State Code, Country Code, Site Num, Address, State, Country, City, Date Local, NO2 Units, NO2 Mean, NO2 1st Max Value, NO2 1st Max Hour, NO2 AQI, O3 Units, O3 Mean, O3 1st Max Value, O3 1st Max Hour, O3 AQI, SO2 Units, SO2 Mean, SO2 1st Max Value, SO2 1st Max Hour, SO2 AQI, CO Units, CO Mean, CO 1st Max Value, CO 1st Max Hour, CO AQI. ',style={'margin-left': '30px'})]
                  )
-  
-        ],className='col-12 bg-light',style={'border-radius': '3px','padding': '20px 40px'})
-
+        ],className='bg-light',style={'border-radius': '3px','padding': '20px 40px'})
 ])
 
 ##---------------------------------------------------------
