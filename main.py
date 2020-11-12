@@ -10,7 +10,22 @@ from dash.dependencies import Input, Output
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore, initialize_app
+import base64
 
+image = './scatter/scatter.jpg' 
+encoded_image = base64.b64encode(open(image, 'rb').read())
+image1 = './scatter/scatter1.jpg' 
+encoded_image1 = base64.b64encode(open(image1, 'rb').read())
+image2 = './scatter/scatter2.jpg' 
+encoded_image2 = base64.b64encode(open(image2, 'rb').read())
+image3 = './scatter/scatter3.jpg' 
+encoded_image3 = base64.b64encode(open(image3, 'rb').read())
+image4 = './scatter/scatter4.jpg' 
+encoded_image4 = base64.b64encode(open(image4, 'rb').read())
+image5 = './scatter/scatter5.jpg' 
+encoded_image5 = base64.b64encode(open(image5, 'rb').read())
+image6 = './scatter/thangdo.jpg' 
+encoded_image6 = base64.b64encode(open(image6, 'rb').read())
 cred = credentials.Certificate("./data-analytics-1-a1fc9-firebase-adminsdk-7pw8e-d090a8ace0.json") #key connect database
 firebase_admin.initialize_app(cred)
 db = firestore.client()
@@ -50,7 +65,6 @@ main = html.Div([
                   html.Div('Ngô Quang Long 18039011'),
                   html.Div('Lê Dĩ Khang - 18037851'),  
                   ],className='col-6'),
-              html.Div(html.Img(src=app.get_asset_url('./scatter/thangdo.jpg'))),
                 html.Div( [
                   html.Div('Nguyễn Trần Nhật Hưng - 18036971'),
                   html.Div('Bùi Thành Nam - 18055471'),
@@ -194,7 +208,7 @@ lineChart = html.Div([
                 ,style={'margin-left': '30px'})
             ]),
             html.Div('Ý nghĩa chỉ số AQI'),
-         
+            html.Img(src='data:image/png;base64,{}'.format(encoded_image6.decode()),className= 'col-8',style={'align':'center'})),
             html.Div('*Nhấn chọn bang trên chú thích bên phải biểu đồ để ẩn/hiện line', style={'font-size':'13px', 'color':'red'}), 
             html.Div([
                 html.Div(
@@ -264,6 +278,7 @@ barChart = html.Div([
                 ,style={'margin-left': '30px'})
             ]),
             html.Div('Ý nghĩa chỉ số AQI '),
+          html.Img(src='data:image/png;base64,{}'.format(encoded_image6.decode()),className= 'col-8',style={'align':'center'})),
             html.Div('Chọn năm'),
             html.Div([
               html.Div([
@@ -508,10 +523,22 @@ scatterChart = html.Div([
                 html.Span('Scatter chart (biểu đồ phân tán) thường được sử dụng để thể hiện mối tương quan giữa các yếu tố trên đồ thị. Sử dụng để nghiên cứu sự tương quan giữa các loại khí.'
                 ,style={'margin-left': '30px'})
             ]),
-            html.Div([
+                 html.Div([
                   html.Br(),html.Br()
             ]),
                 html.Div('Biểu đồ scatter thể hiện sự tương quan giữa các loại khí',style={'font-size':'20px','text-align':'center'}),
+                html.Div([
+                  html.Img(src='data:image/png;base64,{}'.format(encoded_image.decode()),className= 'col-8',style={'align':'center'})),
+                   html.Img(src='data:image/png;base64,{}'.format(encoded_image1.decode()),className= 'col-8',style={'align':'center'}))  ,   
+                ],className='row'),
+                 html.Div([
+                     html.Img(src='data:image/png;base64,{}'.format(encoded_image2.decode()),className= 'col-8',style={'align':'center'})),
+                     html.Img(src='data:image/png;base64,{}'.format(encoded_image3.decode()),className= 'col-8',style={'align':'center'})),                     
+                 ],className ='row'),
+                  html.Div([
+                      html.Img(src='data:image/png;base64,{}'.format(encoded_image4.decode()),className= 'col-8',style={'align':'center'})),
+                       html.Img(src='data:image/png;base64,{}'.format(encoded_image5.decode()),className= 'col-8',style={'align':'center'})),
+                   ],className ='row')
         ],className='col-9 bg-light',style={'border-radius': '3px','padding': '20px 40px'}),
     ], className = 'row')
 ], className='container')
