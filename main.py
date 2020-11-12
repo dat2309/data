@@ -524,7 +524,6 @@ def update_graph2(selected_value):
    
   elif selected_value ==  '2014':
     fig.add_trace(go.Pie(labels=Air, values=y[14], name="Trung bình khínam2014"))
-)
   elif selected_value ==  '2015':
     fig.add_trace(go.Pie(labels=Air, values=y[15], name="Trung bình khínam2015"))
 
