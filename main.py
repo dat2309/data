@@ -25,6 +25,7 @@ app.layout = html.Div([
  # home page
 main = html.Div([
     html.Div([
+      html.Img(src="./scatter/thangdo.jpg")
       html.Div('HOME PAGE', style={'font-size': '60px','text-align': 'center','font-weight': 'bold','color':'white'}),
       # another page
       html.Div([
