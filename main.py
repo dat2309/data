@@ -243,10 +243,6 @@ lineChart = html.Div([
             ], className='row bg-success'),
         ],className='col-9 bg-light',style={'border-radius': '3px','padding': '20px 40px'}),
 ], className='container'),])
-
-
-
-
 # # Bar Chart 
 barChart = html.Div([
      # home page text
@@ -487,55 +483,53 @@ def update_graph2(selected_value):
   fig = go.Figure()
   if selected_value ==  '2000':
     fig.add_trace(go.Pie(labels=Air, values=y[0], name="Trung bình khínam2000"))
-    fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ năm 2000 ')
+
   elif selected_value ==  '2001':
     fig.add_trace(go.Pie(labels=Air, values=y[1], name="Trung bình khínam2001"))
-    fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ năm 2001 ')
+
   elif selected_value ==  '2002':
     fig.add_trace(go.Pie(labels=Air, values=y[2], name="Trung bình khínam2002"))
-    fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ năm 2002 ')
+
   elif selected_value ==  '2003':
     fig.add_trace(go.Pie(labels=Air, values=y[3], name="Trung bình khínam2003"))
-    fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ năm 2003 ')
+
   elif selected_value ==  '2004':
     fig.add_trace(go.Pie(labels=Air, values=y[4], name="Trung bình khínam2004"))
-    fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ năm 2004 ')
+
   elif selected_value ==  '2005':
     fig.add_trace(go.Pie(labels=Air, values=y[5], name="Trung bình khínam2005"))
-    fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ năm 2005 ')
+
   elif selected_value ==  '2006':
     fig.add_trace(go.Pie(labels=Air, values=y[6], name="Trung bình khínam2006"))
-    fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ năm 2006')
+ 
   elif selected_value ==  '2007':
     fig.add_trace(go.Pie(labels=Air, values=y[7], name="Trung bình khínam2007"))
-    fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ năm 2007 ')
+
   elif selected_value ==  '2008':
     fig.add_trace(go.Pie(labels=Air, values=y[8], name="Trung bình khínam2008"))
-    fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ năm 2008')
+  
   elif selected_value ==  '2009':
     fig.add_trace(go.Pie(labels=Air, values=y[9], name="Trung bình khínam2009"))
-    fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ năm 2009 ')
+
   elif selected_value ==  '2010':
     fig.add_trace(go.Pie(labels=Air, values=y[10], name="Trung bình khínam2010"))
-    fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ năm 2010 ')
+
   elif selected_value ==  '2011':
     fig.add_trace(go.Pie(labels=Air, values=y[11], name="Trung bình khínam2011"))
-    fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ năm 2011 ')
   elif selected_value ==  '2012':
     fig.add_trace(go.Pie(labels=Air, values=y[12], name="Trung bình khínam2012"))
-    fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ năm 2012 ')
   elif selected_value ==  '2013':
     fig.add_trace(go.Pie(labels=Air, values=y[13], name="Trung bình khínam2013"))
-    fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ năm 2013 ')
+   
   elif selected_value ==  '2014':
     fig.add_trace(go.Pie(labels=Air, values=y[14], name="Trung bình khínam2014"))
-    fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ năm 2014 ')
+)
   elif selected_value ==  '2015':
     fig.add_trace(go.Pie(labels=Air, values=y[15], name="Trung bình khínam2015"))
-    fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ năm 2015 ')
+
   elif selected_value ==  '2016':
     fig.add_trace(go.Pie(labels=Air, values=y[16], name="Trung bình khínam2016"))
-    fig.update_layout(title='Biểu đồ tròn so sánh tỉ lệ AQI giữa các khí NO2, O3, SO2, CO ở Mỹ năm 2016 ')
+
   return fig
 
 
