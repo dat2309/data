@@ -457,7 +457,7 @@ def update_graph2(selected_value):
     y[i].append(np.round(c[i]['mean_AQI_CO']/sum,2))
     y[i].append(np.round(c[i]['mean_AQI_NO2']/sum,2))
     y[i].append(np.round(c[i]['mean_AQI_O3']/sum,2))
-    y[i].append(np.round(c[i]['mean_AQI_SO2']/sum,))
+    y[i].append(np.round(c[i]['mean_AQI_SO2']/sum,2))
   Air = ['CO', 'NO2', 'O3','SO2']
   fig = go.Figure()
   if selected_value ==  '2000':
