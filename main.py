@@ -528,16 +528,16 @@ scatterChart = html.Div([
             ]),
                 html.Div('Biểu đồ scatter thể hiện sự tương quan giữa các loại khí',style={'font-size':'20px','text-align':'center'}),
                 html.Div([
-                  html.Img(src='data:image/png;base64,{}'.format(encoded_image.decode()),className= 'col-5',style={'align':'center'}),
-                   html.Img(src='data:image/png;base64,{}'.format(encoded_image1.decode()),className= 'col-5',style={'align':'center'})  ,   
+                  html.Img(src='data:image/png;base64,{}'.format(encoded_image.decode()),className= 'col-7',style={'align':'center'}),
+                   html.Img(src='data:image/png;base64,{}'.format(encoded_image1.decode()),className= 'col-7',style={'align':'center'})  ,   
                 ],className='row'),
                  html.Div([
-                     html.Img(src='data:image/png;base64,{}'.format(encoded_image2.decode()),className= 'col-5',style={'align':'center'}),
-                     html.Img(src='data:image/png;base64,{}'.format(encoded_image3.decode()),className= 'col-5',style={'align':'center'}),                     
+                     html.Img(src='data:image/png;base64,{}'.format(encoded_image2.decode()),className= 'col-7',style={'align':'center'}),
+                     html.Img(src='data:image/png;base64,{}'.format(encoded_image3.decode()),className= 'col-7',style={'align':'center'}),                     
                  ],className ='row'),
                   html.Div([
-                      html.Img(src='data:image/png;base64,{}'.format(encoded_image4.decode()),className= 'col-5',style={'align':'center'}),
-                       html.Img(src='data:image/png;base64,{}'.format(encoded_image5.decode()),className= 'col-5',style={'align':'center'}),
+                      html.Img(src='data:image/png;base64,{}'.format(encoded_image4.decode()),className= 'col-7',style={'align':'center'}),
+                       html.Img(src='data:image/png;base64,{}'.format(encoded_image5.decode()),className= 'col-7',style={'align':'center'}),
                    ],className ='row')
         ],className='col-9 bg-light',style={'border-radius': '3px','padding': '20px 40px'}),
     ], className = 'row')
