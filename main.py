@@ -3,12 +3,10 @@ import dash_bootstrap_components as dbc
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-import pandas as pd
-import plotly.express as px
+import pandas as p
 import plotly.graph_objects as go
 import numpy as np
 from dash.dependencies import Input, Output
-from google.colab import files
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore, initialize_app
