@@ -11,7 +11,6 @@ from dash.dependencies import Input, Output
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore, initialize_app
-from PIL import Image
 
 
 cred = credentials.Certificate("./data-analytics-1-a1fc9-firebase-adminsdk-7pw8e-d090a8ace0.json") #key connect database
@@ -198,7 +197,7 @@ lineChart = html.Div([
                 ,style={'margin-left': '30px'})
             ]),
             html.Div('Ý nghĩa chỉ số AQI'),
-            html.Img(src=Image.open('./scatter/thangdo.jpg'), className= 'col-8',style={'align':'center'}),
+            html.Img(src='./scatter/thangdo.jpg', className= 'col-8',style={'align':'center'}),
             html.Div('*Nhấn chọn bang trên chú thích bên phải biểu đồ để ẩn/hiện line', style={'font-size':'13px', 'color':'red'}),
             
             html.Div([
@@ -272,7 +271,7 @@ barChart = html.Div([
             ]),
           
              html.Div('Ý nghĩa chỉ số AQI '),
-            html.Img(src=Image.open('./scatter/thangdo.jpg'), className= 'col-8',style={'align':'center'}),
+            html.Img(src='./scatter/thangdo.jpg', className= 'col-8',style={'align':'center'}),
             html.Div([
                   html.Br(),html.Br()
             ]),
@@ -567,19 +566,19 @@ scatterChart = html.Div([
                
                 html.Div('Biểu đồ scatter thể hiện sự tương quan giữa các loại khí',style={'font-size':'20px','text-align':'center'}),
                 html.Div([
-                   html.Img(src=Image.open('./scatter/scatter.jpg'), className='col -5'),
+                   html.Img(src='./scatter/scatter.jpg', className='col -5'),
                
-                   html.Img(src=Image.open('./scatter/scatter2.jpg'), className='col -5'),       
+                   html.Img(src='./scatter/scatter2.jpg', className='col -5'),       
                 ],className='row'),
                  html.Div([
-                      html.Img(src=Image.open('./scatter/scatter3.jpg'), className='col -5'),
-                     html.Img(src=Image.open('./scatter/scatter4.jpg'), className='col -5'),
+                      html.Img(src='./scatter/scatter3.jpg', className='col -5'),
+                     html.Img(src='./scatter/scatter4.jpg', className='col -5'),
                          
                  ],className ='row'),
                     
                    html.Div([
-                             html.Img(src=Image.open('./scatter/scatter5.jpg'), className='col -5'),  
-                                html.Img(src=Image.open('./scatter/scatter1.jpg'), className='col -5'),
+                             html.Img(src='./scatter/scatter5.jpg', className='col -5'),  
+                                html.Img(src='./scatter/scatter1.jpg', className='col -5'),
                    ],className ='row')
              
 
