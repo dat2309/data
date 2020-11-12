@@ -12,7 +12,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore, initialize_app
 from PIL import Image
- 
+import grpc
 
 cred = credentials.Certificate("./data-analytics-1-a1fc9-firebase-adminsdk-7pw8e-d090a8ace0.json") #key connect database
 firebase_admin.initialize_app(cred)
